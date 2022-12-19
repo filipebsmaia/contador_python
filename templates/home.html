@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>PDI</title>
+
+    <style>
+      * {
+        color: #ff9000;
+      }
+      button {
+        padding: 1rem;
+        border-radius: 16px;
+        background-color: transparent;
+        border: 1px solid #ff9000;
+        transition: .3s;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .imgs {
+        background-color: rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        margin-top: 2rem;
+        padding: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ff9000;
+        transition: .3s;
+      }
+
+      .imgs:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    </style>
+  </head>
+  <script>
+    function saveImage() {
+      fetch("take").then(() => {
+        window.location.reload();
+      });
+    }
+  </script>
+  <body style="background-color: #34226f">
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap;" >
+      <div style="width: 100%; max-width: 500px; min-width: 320px;">
+        <h1>Video</h1>
+        <img src="{{ url_for('live') }}" style="width: 100%">
+      </div>
+  
+      <div style="width: 100%; max-width: 500px; min-width: 320px;">
+        <h1>Processado</h1>
+        <img src="{{ url_for('livecanny') }}" style="width: 100%">
+      </div>
+    </div>
+      <button type="button" style="margin-top: 1rem" onclick="saveImage()">Salvar Imagem</button> 
+    <div>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      {% for file in files %} 
+        <div class="imgs">
+          <span style="">{{ file }}</span>
+          <div style="display: flex; align-items: center; margin-top: .5rem">
+            <a href="./takes/{{ file }}">
+              <img src="./takes/{{ file }}" style="height: 128px; margin-right: 1rem;" />
+            </a>
+            <a href="/saved/{{ file }}">
+              <img src="./saved/{{ file }}" style="height: 128px; margin-right: 1rem;" />
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    </div>
+  </body>
+</html>
