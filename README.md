@@ -32,10 +32,8 @@
 ## :bookmark: Sobre
 
 <p>
-O <strong>contador_python</strong> foi uma aplicação desenvolvida no evento NextLevelWeek ministrado pela rocketseat. O objetivo da aplicação é ajudar pessoas a encontrarem pontos de coleta para reciclagem.
+O <strong>contador_python</strong> foi uma aplicação desenvolvida para a materia de processamento digital de imagens. O objetivo era que a aplicação capturasse imagens provindas de uma camera e conseguisse processar, além de armazenar as imagens.
 <p>
-
-Essa aplicação foi construída na trilha Booster A ideia de criar uma aplicação voltada ao meio ambiente surgiu da coincidência da data do evento com a data da semana do meio ambiente.
 
 <a id="tecnologias"></a>
 
